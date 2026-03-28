@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yggdrasil</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            font-family: Times New Roman, sans-serif;
+            gap: 24px;
+        }
+        
+        #gameCanvas {
+            border: 3px solid #00ff88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+            background: #1a1a2e;
+        }
+
+        #uppdragCanvas {
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            background: #1a1a2e url('assets/Stats.png') center/cover no-repeat;
+            display: block;
+            margin: 0 auto 16px auto;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+         #inventory {
+            text-align: center;
+        }
+
+         #inventoryCanvas {
+            border: 3px solid #00ff88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+                background: #1a1a2e url('assets/F%C3%B6rr%C3%A5d.png') center/contain no-repeat;
+        }
+
+        #character {
+            text-align: center;
+        }
+
+        #characterCanvas {
+            border: 3px solid #00ff88;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+            background: #1a1a2e url('assets/Karakt%C3%A4rssida.png') center/contain no-repeat;
+        }
+
+        #statsContainer {
+            position: absolute;
+            bottom: 20;
+            left: 20;
+        }
+
+        #statsCanvas {
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            background: #1a1a2e url('assets/Stats.png') center/cover no-repeat;
+        }
+
+        /* Canvas under förråd (same size/style as stats canvas) */
+        #inventorySubCanvas {
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            background: #1a1a2e url('assets/Stats.png') center/cover no-repeat;
+            display: block;
+            /* Move up to roughly match the vertical position of #statsCanvas */
+            position: absolute;
+            bottom: 20;
+            right: 20;
+        }
+        
+        h1 {
+            color: #eee;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+    </style>
+</head>
+    <body>
+        <div id="main-flex" style="display: flex; flex-direction: row; align-items: flex-start; gap: 24px; width: 100%; justify-content: center;">
+            <div id="character">
+                <h1>Karaktär</h1>
+                <canvas id="characterCanvas" width="600" height="600"></canvas>
+                <div id="statsContainer">
+                    <canvas id="statsCanvas" width="600" height="200"></canvas>
+                </div>
+            </div>
+            <div id="container" style="text-align: center;">
+                <h1>Yggdrasil</h1>
+                <canvas id="gameCanvas" width="800" height="600"></canvas>
+                <canvas id="uppdragCanvas" width="800" height="200"></canvas>
+            </div>
+            <div id="inventory">
+                <h1>Förråd</h1>
+                <canvas id="inventoryCanvas" width="600" height="600"></canvas>
+                <canvas id="inventorySubCanvas" width="600" height="200"></canvas>
+            </div>
+        </div>
+    
+    <script src="js/Animationer.js"></script>
+    <script src="js/Huvudmeny.js"></script>
+    <script src="js/SkapaGubbe.js"></script>
+    <script src="js/NamnGubbe.js"></script>
+    <script src="js/Krav.js"></script>
+    <script src="js/Spelare.js"></script>
+    <script src="js/Utrustning.js"></script>
+    <script src="js/Karakt%C3%A4rssida.js"></script>
+    <script src="js/F%C3%B6rr%C3%A5d.js"></script>
+    <script src="js/Fyrmille.js"></script>
+    <script src="js/K%C3%B6pa.js"></script>
+    <script src="js/S%C3%A4lja.js"></script>
+    <script src="js/Smeden.js"></script>
+    <script src="js/ShopUI.js"></script>
+    <script src="js/DruidenochSierskan.js"></script>
+    <script src="js/Lotteriet.js"></script>
+    <script src="js/Hus.js"></script>
+    <script src="js/Skepp.js"></script>
+    <script src="js/Byggarbetsplatsen.js"></script>
+    <script src="js/L%C3%A5nghuset.js"></script>
+    <script src="js/Stats.js"></script>
+    <script src="js/Varlden.js"></script>
+    <script src="js/Stigen.js"></script>
+    <script src="js/Kartan.js"></script>
+    <script src="js/V%C3%A4rldskartan.js"></script>
+    <script src="js/Jaktmarken.js"></script>
+    <script src="js/Chansrutan.js"></script>
+    <script src="js/Strid.js"></script>
+    <script src="js/Fiender.js"></script>
+    <script src="js/Djur.js"></script>
+    <script src="js/Gestalter.js"></script>
+    <script src="js/Gestaltrutan.js"></script>
+    <script src="js/Uppdrag.js"></script>
+    <script src="js/UppdragDisplay.js"></script>
+    <script src="js/InventorySummary.js"></script>
+    <script src="js/Bandit.js"></script>
+    <script src="js/Midg%C3%A5rdNPC.js"></script>
+    <script src="js/Gjallarbron.js"></script>
+    <script src="js/Skogen.js"></script>
+    <script src="js/Startcutscene.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/Runor.js"></script>
+    <script src="js/Runa_R.js"></script>
+</body>
+</html>

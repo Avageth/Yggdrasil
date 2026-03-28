@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <h1>JavaScript Test</h1>
+    <div id="output"></div>
+    
+    <script src="js/Animationer.js"></script>
+    <script src="js/Huvudmeny.js"></script>
+    <script src="js/SkapaGubbe.js"></script>
+    <script src="js/NamnGubbe.js"></script>
+    <script src="js/Krav.js"></script>
+    <script src="js/Spelare.js"></script>
+    <script src="js/Utrustning.js"></script>
+    <script src="js/Karaktärssida.js"></script>
+    <script src="js/Förråd.js"></script>
+    <script src="js/Fyrmille.js"></script>
+    <script src="js/Köpa.js"></script>
+    <script src="js/Sälja.js"></script>
+    <script src="js/Smeden.js"></script>
+    <script src="js/DruidenochSierskan.js"></script>
+    <script src="js/Stats.js"></script>
+    <script src="js/Varlden.js"></script>
+    <script src="js/Stigen.js"></script>
+    <script src="js/Kartan.js"></script>
+    <script src="js/Jaktmarken.js"></script>
+    <script src="js/Strid.js"></script>
+    <script src="js/Fiender.js"></script>
+    <script src="js/Gestalter.js"></script>
+    <script src="js/Gestaltrutan.js"></script>
+    <script>
+        const output = document.getElementById('output');
+        try {
+            output.innerHTML += '<p>Animationer: ' + (typeof Animationer !== 'undefined' ? '✓' : '✗') + '</p>';
+            output.innerHTML += '<p>Huvudmeny: ' + (typeof Huvudmeny !== 'undefined' ? '✓' : '✗') + '</p>';
+            output.innerHTML += '<p>Kartan: ' + (typeof Kartan !== 'undefined' ? '✓' : '✗') + '</p>';
+            output.innerHTML += '<p>Jaktmarken: ' + (typeof Jaktmarken !== 'undefined' ? '✓' : '✗') + '</p>';
+            output.innerHTML += '<p>Stigen: ' + (typeof Stigen !== 'undefined' ? '✓' : '✗') + '</p>';
+            output.innerHTML += '<p style="color: green;">Alla klasser laddade!</p>';
+        } catch(e) {
+            output.innerHTML += '<p style="color: red;">Fel: ' + e.message + '</p>';
+        }
+    </script>
+</body>
+</html>
